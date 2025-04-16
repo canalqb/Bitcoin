@@ -42,4 +42,6 @@ Este projeto está licenciado sob a Licença MIT.
 
 **CanalQb** - Pesquisa baseada em Endomorfismo - Lambda
 
+Os puzzles 8 e 13 estão resolvidos, mas estão disponiveis para teste.
+
 Aceitando doações em bc1qks4k7klzju6afzkyhnxtf84zctt5t9kl9vyl8e
