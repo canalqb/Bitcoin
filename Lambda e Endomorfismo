@@ -1,0 +1,40 @@
+Claro! Vou explicar os dois termos de maneira simples.
+
+### **Lambda**
+No contexto de programação e matemática, o termo **lambda** é usado de várias formas, mas vou explicar os dois significados mais comuns:
+
+1. **Lambda (funções anônimas em programação)**:
+   - Em programação, **lambda** geralmente se refere a uma **função anônima**, ou seja, uma função que não tem um nome explícito.
+   - Em muitas linguagens de programação, como Python, JavaScript e Lisp, podemos definir funções de maneira mais concisa usando expressões lambda. Isso pode ser útil quando você precisa de uma função temporária ou simples.
+   
+   Exemplo em Python:
+   ```python
+   soma = lambda x, y: x + y
+   print(soma(2, 3))  # Output: 5
+   ```
+   Nesse exemplo, `lambda x, y: x + y` é uma função que soma dois números, mas não tem um nome definido (é uma função anônima).
+
+2. **Lambda (na matemática e álgebra linear)**:
+   - Em álgebra, **lambda** é frequentemente usado para representar um **valor escalar**, como o valor de um **autovalor** em uma matriz ou em transformações lineares.
+   - Em uma transformação linear, um valor lambda pode ser associado a um vetor próprio (ou autovetor), onde a transformação apenas escala esse vetor por um fator **lambda**.
+   
+   Exemplo (autovalores e autovetores):
+   - Se temos uma matriz \( A \) e um vetor \( v \), o autovalor **lambda** é o fator pelo qual o vetor é escalado quando a matriz \( A \) é aplicada a ele: \( A \cdot v = \lambda \cdot v \).
+
+### **Endomorfismo**
+O termo **endomorfismo** vem da matemática, mais especificamente da **teoria dos grupos**, **álgebra linear** e **teoria das categorias**.
+
+- **Endomorfismo** é uma função ou mapeamento de um **objeto matemático** (geralmente um conjunto, grupo, espaço vetorial, etc.) para ele mesmo. Ou seja, é uma transformação que leva o elemento dentro de um conjunto de volta para o próprio conjunto, sem "sair" dele.
+
+  **Exemplo em álgebra linear**:
+  - Um **endomorfismo** de um espaço vetorial \( V \) é uma função linear \( f: V \to V \) que mapeia o espaço para ele mesmo.
+  - Isso significa que a transformação aplica-se a um vetor e retorna um vetor dentro do mesmo espaço. Por exemplo, uma matriz que transforma vetores de um espaço de volta ao mesmo espaço é um endomorfismo.
+
+  **Exemplo em teoria dos grupos**:
+  - Se temos um grupo \( G \), um endomorfismo de \( G \) é uma função \( f: G \to G \) que preserva a operação do grupo. Isso significa que, se você aplica a operação do grupo a dois elementos transformados pela função, o resultado será o mesmo que aplicar a função aos elementos da operação original.
+
+### Resumo:
+- **Lambda** pode se referir a uma **função anônima** em programação ou a um **valor escalar** em álgebra.
+- **Endomorfismo** é uma transformação que mapeia um objeto matemático (como um vetor ou grupo) para ele mesmo.
+
+Esses conceitos podem ser aplicados de maneira mais técnica dependendo do campo (programação, álgebra, criptografia, etc.), mas esses são os significados principais. Se quiser mais detalhes sobre qualquer um deles, posso explicar mais a fundo!
