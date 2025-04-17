@@ -6,18 +6,20 @@ O aplicativo **SNAPSHOT BTC**, versão 1.0, permite que você baixe automaticame
 
 #### ✅ Passo a passo:
 
-1. **Dê dois cliques** no arquivo `SNAPSHOT_BTC.exe`.
+1. **Dê dois cliques** no arquivo `SNAPSHOT_Bitcoin.exe`.
+Também disponivel no link https://canalqb.blogspot.com/?c=snapshotbitcoinwindows
+Como minha conta é gratuita no Github, pode ser que eu precise de espaço então vou manter pelo menos o Readme.md para as informações
 
-2. O aplicativo será aberto em uma janela de terminal com o título:
+3. O aplicativo será aberto em uma janela de terminal com o título:
    ```
    Sistema SNAPSHOT @CANALQB - V 1.0
    ```
 
-3. Ele vai começar o processo:
+4. Ele vai começar o processo:
    - Se já houver um arquivo de dados do dia atual, você poderá escolher se quer baixar de novo ou não.
    - Depois, ele faz a extração dos dados e a importação automática para o banco.
 
-4. Ao final, você verá a mensagem indicando que o processo foi concluído com sucesso.
+5. Ao final, você verá a mensagem indicando que o processo foi concluído com sucesso.
 
 #### 📁 Arquivos gerados:
 - `relatorio_btc.db` — banco de dados contendo os dados processados.
@@ -27,18 +29,21 @@ O aplicativo **SNAPSHOT BTC**, versão 1.0, permite que você baixe automaticame
 
 ### 🟢 Para Usuários Linux/Ubuntu (.bin)
 
+Para usar no linux, o arquivo está com 39.7M, devido o tamanho resolvi deixar no TeraBox no link
+https://canalqb.blogspot.com/?c=snapshotbitcoinpuzzle
+
 #### ✅ Passo a passo:
 
 1. Abra o terminal na pasta onde está o aplicativo.
 
 2. Torne o arquivo executável (se ainda não estiver):
    ```bash
-   chmod +x snapshot_btc.bin
+   chmod +x SNAPSHOT_Bitcoin.bin
    ```
 
 3. Execute o aplicativo:
    ```bash
-   ./snapshot_btc.bin
+   ./SNAPSHOT_Bitcoin.bin
    ```
 
 4. Assim como no Windows, o terminal exibirá o progresso das etapas: download, extração, e importação dos dados.
@@ -71,3 +76,5 @@ Tudo é armazenado localmente, na mesma pasta do aplicativo:
 - Os arquivos baixados e extraídos, com a data no nome
 
 ---
+
+Pix: qrodrigob@gmail.com
