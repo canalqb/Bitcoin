@@ -1,8 +1,3 @@
-Perfeito! Que bom que curtiu 😄  
-Como você já converteu tudo para um **executável/programa** (como `.exe` no Windows ou similar), então podemos ajustar o `README.md` para refletir isso — removendo menções ao Python direto e focando na **execução do programa** em si.
-
-Aqui vai a versão atualizada:
-
 ---
 
 # 🔐 Bitcoin Private Key Finder
@@ -10,6 +5,10 @@ Aqui vai a versão atualizada:
 Este é um **programa autônomo** que realiza uma busca pseudoaleatória por chaves privadas de Bitcoin, baseando-se em intervalos definidos e tentando encontrar correspondência com endereços previamente configurados.
 
 > ⚠️ **Aviso:** Este projeto é apenas para fins **educacionais** e de **pesquisa**. Não incentive ou realize atividades que violem termos de uso, leis locais ou internacionais.
+
+---
+
+# Para programadores use `Puzzle_Procurar_RANDOM.exe ID` exemplo, quero procurar diretamente o puzzle 69 então `Puzzle_Procurar_RANDOM.exe 69`
 
 ---
 
@@ -77,5 +76,3 @@ Se este programa te ajudar de alguma forma, considere apoiar:
 - 💸 Pix: `qrodrigob@gmail.com`
 
 ---
-
-Se quiser que eu gere também um modelo de ícone, um `LICENSE`, ou sugestão de nome para o programa, é só pedir!
