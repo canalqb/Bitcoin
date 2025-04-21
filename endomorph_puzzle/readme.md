@@ -45,3 +45,7 @@ Este projeto está licenciado sob a Licença MIT.
 Os puzzles 8 e 13 estão resolvidos, mas estão disponiveis para teste.
 
 Aceitando doações em bc1qks4k7klzju6afzkyhnxtf84zctt5t9kl9vyl8e
+
+Link para windows sem print de todas as frases: https://canalqb.blogspot.com/?c=puzzleendomorphw
+Link para ubuntu sem print de todas as frases: https://canalqb.blogspot.com/?c=puzzleendomorphl
+./btc_privatekey_endomorph_search_semprint
