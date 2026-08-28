@@ -94,6 +94,7 @@ def main(argv=None):
             sys.exit("erro: --benchmark exige --limit N")
         targets = []
         start, end = 1, 1 << 64  # intervalo amplo, sem chance de colisao
+        resume_path = None  # benchmark nao deve tocar resume de buscas reais
 
     print(f"[info] alvo: {label}")
     print(f"[info] intervalo: {hex(start)}..{hex(end)} "

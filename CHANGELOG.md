@@ -30,6 +30,9 @@ Todas as alteracoes relevantes deste repositorio.
 - **Seguranca (HIGH)**: dependencia de PostgreSQL remoto removida - dados locais.
 - **Seguranca (CRITICAL)**: token de GitHub exposto em URL remota de clone - URL sanitizada apos push; recomendada rotacao.
 - **Estilo**: caminhos com espacos referenciados corretamente.
+- **Desempenho (HIGH)**: loop placeholder `for _ in range(total): pass` removido em `run_search_workers` - desperdicava CPU e travaria com `--limit` muito grande.
+- **Correcao**: `--benchmark` agora desabilita resume - antes usava/sobrescrevia `data/resume.json` de buscas reais.
+- **Consistencia**: `--limit` e velocidade em modo `endomorph` agora contam candidatos (enderecos testados) de forma identica em single-process e workers - antes o workers contava chaves (1x) e o single contava candidatos (3x).
 
 ### Melhorado (desempenho / consumo)
 - Comparacao de alvo por hash160 pre-computado (evita Base58 por chave).

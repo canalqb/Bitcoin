@@ -275,20 +275,17 @@ def run_search_workers(cfg, workers):
     )
     last_display = 0.0
     total = cfg.limit if cfg.limit is not None else None
+    # conta candidatos em vez de chaves para consistencia com single-process
+    step = 3 if cfg.mode == "endomorph" else 1
     try:
         try:
             it = pool.imap_unordered(_worker_try, itertools.count(), chunksize=1)
-            for _ in range(total) if total is not None else ():
-                pass  # placeholder; loop real abaixo
-            # iteracao lazily interrompida por found/stop/limit
+            # iteracao interrompida por found/stop/limit
             for res in it:
                 if stop["flag"]:
                     pool.terminate()
                     break
-                keys += 1
-                if total is not None and keys >= total:
-                    pool.terminate()
-                    break
+                keys += step
                 if res is not None:
                     scalar, addr = res
                     result["found"] = {"key": scalar, "address": addr,
@@ -296,6 +293,9 @@ def run_search_workers(cfg, workers):
                     if not cfg.quiet:
                         _display(keys, keys / max(time.time() - started, 1e-9),
                                  time.time() - started, found=True, found_addr=addr)
+                    pool.terminate()
+                    break
+                if total is not None and keys >= total:
                     pool.terminate()
                     break
                 now = time.time()
