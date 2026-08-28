@@ -94,3 +94,47 @@ Bitcoin/
 ├── docs/              # post HTML + metadados
 └── (pastas originais mantidas: Puzzle_Random_Search, endomorph_puzzle, Snapshot)
 ```
+
+## 8. Analise dos subdiretorios (binarios originais)
+
+Os tres executaveis nas pastas originais foram inspecionados tecnicamente
+(analise estatica de cabecalho PE e strings - sem execucao, sem desmontagem
+completa):
+
+| Binario | SHA-256 | Observacoes |
+| ------- | ------- | ----------- |
+| `Puzzle_Random_Search/btc_privatekey_endomorph_search.exe` | `430fa02c...e017ee7` | PE32+ x86-64, 7 secoes, ~15.5 MB |
+| `endomorph_puzzle/btc_privatekey_endomorph_search.exe` | `40300558...35719c` | PE32+ x86-64, 7 secoes, ~10.2 MB |
+| `Snapshot/SNAPSHOT_Bitcoin.exe` | `4ba30365...fb1f1f1` | PE32+ x86-64, 7 secoes, ~7.6 MB |
+
+Descobertas:
+
+- **Linguagem: Swift** - marcadores `__swift_1`/`__swift_2` presentes nos
+  tres binarios (runtime Swift embutido explica o tamanho dos arquivos).
+- **Nome interno do projeto: "Mini"** - assembly name no manifest
+  (`name="Mini" version="1.0.0.0"`).
+- **PostgreSQL remoto confirmado** - strings `5432` (porta padrao do
+  PostgreSQL) e `pg_` nos tres binarios. Confirma o uso de banco remoto
+  (o readme de `endomorph_puzzle` cita PostgreSQL; `Snapshot` usava banco
+  local SQLite `relatorio_btc.db`).
+- **Recurso `.rsrc` gigante** (15.3 MB / 10.0 MB / 7.4 MB) - dados embutidos
+  como recurso Windows (RCDATA), provavelmente tabelas de enderecos/intervalos.
+  `.text` (codigo) e pequeno (~116 KB): a logica de negocio e simples, os
+  dados e o runtime dominam o tamanho.
+- **Nenhuma string de conexao em claro** (host, user, password, URLs):
+  provavelmente ofuscadas/criptografadas no binario ou fornecidas em
+  tempo de execucao. `NAO VALIDADO` - exigiria desmontagem/execucao
+  controlada para confirmar.
+- **Identificacao incompleta**: `NAO VALIDADO` - versao do compilador
+  Swift e dependencias exatas (exigiria tooling especifico).
+
+Implicacoes de seguranca para quem usa os binarios originais:
+
+1. **PostgreSQL remoto** exige credenciais e rede para terceiros - a
+   reimplementacao Python usa dados locais (`data/puzzles.json`) e nao
+   depende de servidor externo.
+2. **Binarios nao auditaveis** (sem fonte) - impossivel verificar o que
+   e enviado pela rede. A versao Python e 100% auditavel (stdlib).
+3. Os binarios e pastas originais foram **preservados intactos** neste
+   repositorio, mas nao sao a implementacao de referencia.
+

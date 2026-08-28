@@ -99,6 +99,19 @@ a:focus-visible{outline:3px solid #28a745;outline-offset:2px;}
 
 <p>Além das falhas, encontramos e corrigimos um <strong>bug real de implementação</strong>: a função de validação de endereços-alvo usava a decodificação Base58 crua (25 bytes, incluindo checksum) em vez da Base58Check (21 bytes de payload). Resultado: qualquer endereço-alvo era rejeitado. O teste automatizado cobre essa regressão para sempre.</p>
 
+	<h3 class="post_cqb_h3">Análise técnica dos executáveis originais</h3>
+	<p>Os três executáveis nas pastas <code>Puzzle_Random_Search/</code>, <code>endomorph_puzzle/</code> e <code>Snapshot/</code> foram preservados intactos, mas receberam uma análise técnica detalhada. Os resultados revelam uma estrutura que confirma — e aprofunda — o que os readmes indicavam.</p>
+
+	<p><strong>Linguagem:</strong> os três binários são PE32+ x86-64 compilados em <strong>Swift</strong> (marcadores <code>__swift_1</code> e <code>__swift_2</code> no binário), com o runtime da linguagem embutido — o que explica o tamanho de 7,6 MB a 15,5 MB para funcionalidades que em Python puro ocupam ~50 KB de código.</p>
+
+	<p><strong>Banco remoto confirmado:</strong> a string <code>5432</code> (porta padrão do PostgreSQL) e prefixos <code>pg_</code> aparecem nos três executáveis, confirmando a dependência de um banco de dados remoto com credenciais. As strings de conexão (host, usuário, senha) <strong>não</strong> estão em texto claro — provavelmente ofuscadas ou criptografadas no recurso <code>.rsrc</code>.</p>
+
+	<p><strong>Recurso .rsrc gigante:</strong> a seção de recursos (<code>.rsrc</code>) ocupa de 7,4 MB a 15,3 MB em cada executável — mais de 95% do tamanho total. O código (<code>.text</code>) é de apenas ~116 KB. Isso significa que os dados (intervalos, endereços, possivelmente um banco SQLite embutido) estão armazenados como recurso Windows. A versão Python substitui isso por um arquivo JSON de 37 KB.</p>
+
+	<p><strong>Nome interno do projeto:</strong> o assembly manifest dos três binários registra o nome <code>"Mini" version="1.0.0.0"</code> — um detalhe de nomenclatura que não aparece nos readmes.</p>
+
+	<p>O SHA-256 de cada binário foi registrado no <code>ANALYSIS.md</code> para referência e auditoria futura. Nenhum binário foi executado, modificado ou desmontado além da inspeção estática de cabeçalhos e strings.</p>
+
 <h2 class="post_cqb_h2">Como a reescrita em Python reduz o consumo de hardware</h2>
 <p>O objetivo não era só tornar o programa mais rápido — era obter o melhor equilíbrio entre CPU, RAM, disco e energia. A versão em Python puro ataca isso em cinco frentes.</p>
 
