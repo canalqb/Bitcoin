@@ -1,0 +1,4 @@
+# Bitcoin - Python dependencies
+# Este projeto usa APENAS a biblioteca padrao do Python 3.8+.
+# Nenhuma dependencia externa e necessaria.
+# Consulte REQUIREMENTS.md para detalhes.

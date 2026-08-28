@@ -1,0 +1,31 @@
+# Bytecode / cache
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+.venv/
+venv/
+env/
+
+# Progresso e cache de busca (gerado pelo puzzle_search)
+data/resume*.json
+data/found/*.json
+
+# Banco de dados e exportacoes do snapshot
+data/relatorio_btc.db
+data/relatorio_btc.tsv
+*.db
+
+# Ambiente
+.env
+*.env.local
+
+# IDE
+.vscode/
+.idea/workspace.xml
+
+# Sistema
+Thumbs.db
+.DS_Store
+Desktop.ini

@@ -1,38 +1,84 @@
-# 🔧 Pasta de Ferramentas – Desenvolvidas por Rodrigo ([@CanalQb](https://www.youtube.com/@canalqb))
+# Bitcoin - Ferramentas de Pesquisa e Analise
 
-Bem-vindo(a) à coleção de sistemas e utilitários desenvolvidos especialmente para entusiastas de blockchain, segurança digital e *researchers* da área de criptografia.
+Colecao de ferramentas para o "Bitcoin Puzzle Transaction" e analise
+da blockchain Bitcoin, desenvolvidas por [@CanalQb](https://www.youtube.com/@canalqb).
 
-Aqui você encontrará ferramentas prontas para aplicar ou adaptar aos seus próprios projetos, com foco em automação, análise de dados e engenharia reversa voltada ao ecossistema Bitcoin.
+**Versao 2.0** - reimplementacao em Python puro (stdlib, sem dependencias)
+com correcoes de seguranca, melhorias de desempenho e novos recursos.
 
----
+## Ferramentas
 
-## 📁 Conteúdo da Pasta
+| Ferramenta | Descricao |
+| ---------- | --------- |
+| `python tools/puzzle_search.py` | Busca de chaves privadas em 3 modos (sequential, random, endomorph 3x) |
+| `python tools/snapshot_btc.py` | Consulta de saldos via API publica (SQLite + TSV) |
+| `python tools/selftest.py` | Verificacao de correcao (17 testes, vetores reais) |
+| `python tools/seed_puzzles.py` | Geracao dos dados dos 160 puzzles |
 
-### 1. **Geração de Banco de Dados – SnapShot do Bitcoin**
-Ferramenta que varre e armazena todo o estado atual da blockchain do Bitcoin em um banco de dados local. Ideal para estudos, consultas rápidas e cruzamento de dados históricos.
+## Modos de busca
 
-### 2. **Sistema de Entropia e Frases Mnemonics**
-Gera *seeds* e frases mnemonics compatíveis com os padrões BIP-39 e BIP-44. Essencial para criar carteiras seguras ou realizar testes com recuperação de chaves.
+- **Sequential** - percorre o intervalo em ordem, resumivel.
+- **Random** - sorteio com CSPRNG do SO (`secrets`).
+- **Endomorph** - aceleracao 3x via endomorfismo GLV da secp256k1.
 
-### 3. **Força Bruta para Puzzle Wallets**
-Script otimizado para ataques de força bruta, útil em puzzles ou desafios criptográficos baseados em carteiras Bitcoin ou Ethereum.
- 
----
+## Requisitos
 
-## 👨‍💻 Sobre o Autor
+- **Python 3.8+** (stdlib cobre tudo - zero dependencias externas)
+- Windows, Linux ou macOS; CPU apenas (1 core default, `--workers N` opcional)
 
-Essas ferramentas foram criadas por **Rodrigo**, pesquisador independente e criador do canal [@CanalQb](https://www.youtube.com/@canalqb) no YouTube. No canal, você encontra tutoriais, demonstrações práticas e análises detalhadas sobre segurança digital, carteiras cripto e engenharia reversa.
+## Instalacao
 
----
+```bash
+git clone https://github.com/canalqb/Bitcoin.git
+cd Bitcoin
+python tools/seed_puzzles.py   # gerar data/puzzles.json
+python tools/selftest.py       # verificar implementacao (opcional)
+```
 
-## 📲 Contato Direto
+## Uso rapido
 
-Precisa do código-fonte, suporte técnico ou quer trocar uma ideia sobre os projetos?
+```bash
+# Verificar puzzles resolvidos (demo)
+python tools/puzzle_search.py --puzzle 8 --mode sequential
 
-**Fale direto comigo no WhatsApp:**  
-👉 [Clique para conversar](https://wa.me/5511946829458)  
-*(`Whatsapp Rodrigo +5511946829458, não recebo ligações!`)*
+# Buscar com endomorfismo (3x)
+python tools/puzzle_search.py --puzzle 66 --limit 100000
 
----
+# Benchmark de velocidade
+python tools/puzzle_search.py --benchmark --limit 10000
 
-🛠️ *Seja você um entusiasta, um desenvolvedor ou um pesquisador, fique à vontade para explorar e contribuir com os projetos!*
+# Snapshot de saldos de todos os puzzles
+python tools/snapshot_btc.py --all-puzzles
+```
+
+Veja `TUTORIAL.md` para guia completo.
+
+## Seguranca
+
+- Geracao de chaves por `secrets.randbelow` (CSPRNG, nao MAC address).
+- Dados locais (SQLite/JSON) - sem PostgreSQL remoto.
+- Conexoes HTTPS contra API publica.
+- Veja `SECURITY.md` para politica completa.
+
+## Estrutura
+
+```
+Bitcoin/
+├── src/            # biblioteca Python (stdlib)
+├── tools/          # CLIs
+├── data/           # dados gerados (puzzles, resume, found)
+├── docs/           # post HTML + metadados
+├── *.md            # documentacao
+├── .gitignore
+├── CHANGELOG.md
+├── LICENSE
+└── (pastas originais: Puzzle_Random_Search, endomorph_puzzle, Snapshot)
+```
+
+## Licenca
+
+MIT - veja `LICENSE`.
+
+## Autor
+
+[@CanalQb](https://www.youtube.com/@canalqb) - Pesquisador independente.

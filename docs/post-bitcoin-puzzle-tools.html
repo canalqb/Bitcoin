@@ -1,0 +1,336 @@
+<hr class="post_separator" style="border:0.5px solid #ccc;margin:10px auto;width:95%">
+<p style="text-align:center">
+  <a href="https://www.youtube.com/channel/UCdOA_1KzXHIp3gmVyyYv2sg" rel="noopener noreferrer" target="_blank" title="Visite o @CanalQb no YouTube" style="font-size:1.2em;font-weight:bold;text-decoration:none;color:#28a745">@CanalQb no YouTube</a>
+</p>
+<hr class="post_separator" style="border:0.5px solid #ccc;margin:10px auto;width:95%">
+<div style="margin:20px 0;text-align:center">
+  <img alt="@CanalQb" fetchpriority="high" decoding="async" width="1280" height="400" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgAppgdjbwBxn27tGUch6DJBXRrlOAwk1V0ZTtHvEvlt0HoVsARJSfJDizdDRlmkLwKSxSRzbknK5L3jVKs364oRzgozNeD0Vv2aky1vk2QzrJh-O_sgDQEUXJxw5XHtmFNsmI5iv_ITOJcDfW7k6XtoTE9RgJiKZDW6ZTK41oAjDh7smDJMTC9E1h4YOfm/s2560/CanalQb.png" style="border-radius:10px;max-width:100%;height:auto">
+</div>
+<h1 style="text-align:center;color:#333">Ferramentas Bitcoin Puzzle: análise, correções e tutorial</h1>
+<hr class="post_separator" style="border:0.5px solid #ccc;margin:10px auto;width:95%">
+
+<style>
+/* @CanalQb - Exclusive Design License 2026 */
+.post_cqb_terminal{background:#000!important;color:#4af626!important;padding:20px;border-radius:12px;border:2px solid #333;font-family:'Roboto Mono',monospace!important;overflow-x:auto;}
+.post_cqb_terminal *,.post_cqb_terminal span{color:#4af626!important;background:transparent!important;text-shadow:none!important;}
+.post_cqb_terminal .comment{color:#888!important;}
+.post_cqb_codeblock,.post_cqb_codeblock *{background:#1a1a1a!important;color:#f8f8f2!important;font-family:'Roboto Mono',monospace!important;text-shadow:none!important;}
+.post_cqb_codeblock{padding:20px;border-radius:8px;border-left:5px solid #ffc107;overflow-x:auto;margin:15px 0;}
+.post_cqb_faq{margin:30px 0;}
+.post_cqb_faq_item{margin:10px 0;border:1px solid #e0e0e0;border-radius:8px;overflow:hidden;}
+.post_cqb_faq_question{padding:15px;background:#f9f9f9;cursor:pointer;display:flex;align-items:center;gap:10px;font-weight:600;color:#333;transition:background 0.2s;list-style:none;}
+.post_cqb_faq_question::-webkit-details-marker{display:none;}
+.post_cqb_faq_question:hover{background:#f0f0f0;}
+.post_cqb_faq_answer{padding:15px;background:#fff;color:#555;line-height:1.6;}
+.post_cqb_faq_item[open] .post_cqb_faq_question{background:#e8f5e9;color:#28a745;}
+.post_cqb_tldr{background:rgba(40,167,69,0.08);border-left:4px solid #28a745;padding:15px 20px;border-radius:8px;margin:20px 0;}
+.post_cqb_tldr li{color:#333;line-height:1.7;}
+.post_cqb_h2{color:#333;border-bottom:2px solid #28a745;padding-bottom:6px;margin-top:35px;}
+.post_cqb_h3{color:#333;margin-top:25px;}
+.post_cqb_body p{color:#555;line-height:1.75;font-size:1em;}
+.post_cqb_badge{display:inline-block;background:#28a745;color:#fff;padding:4px 14px;border-radius:20px;font-size:0.85em;margin:10px 0;}
+.post_cqb_note{background:rgba(33,150,243,0.1);border-left:4px solid #2196f3;padding:15px;border-radius:8px;color:#555;font-size:0.9em;margin:20px 0;}
+.post_cqb_warn{background:rgba(255,193,7,0.15);border-left:4px solid #ffc107;padding:15px;border-radius:8px;color:#555;font-size:0.9em;margin:20px 0;}
+.post_cqb_checklist{list-style:none;padding:0;margin:10px 0;}
+.post_cqb_checklist li{display:flex;align-items:flex-start;gap:8px;padding:5px 0;font-size:.95em;color:#555;line-height:1.6;}
+.post_cqb_checklist li i{flex-shrink:0;margin-top:3px;}
+.post_cqb_copy_btn{background:#28a745;color:#fff;border:none;border-radius:6px;padding:6px 12px;font-size:0.8em;cursor:pointer;margin-top:8px;}
+.post_cqb_copy_btn:hover{background:#218838;}
+.post_cqb_progress{position:fixed;top:0;left:0;height:4px;background:#28a745;width:0%;transition:width 0.1s;z-index:9999;}
+.post_cqb_footer{background:#f9f9f9;border-top:1px solid #e0e0e0;padding:20px;border-radius:8px;margin:30px 0;text-align:center;}
+.post_cqb_footer a{color:#28a745;text-decoration:none;font-weight:600;}
+a:focus-visible{outline:3px solid #28a745;outline-offset:2px;}
+@media (prefers-color-scheme: dark){
+  .post_cqb_body p,.post_cqb_faq_answer,.post_cqb_tldr li{color:#ccc;}
+  .post_cqb_h2,.post_cqb_h3{color:#eee;}
+  .post_cqb_faq_item{border-color:#444;}
+  .post_cqb_faq_question{background:#222;color:#eee;}
+  .post_cqb_faq_answer{background:#1a1a1a;}
+  .post_cqb_footer{background:#1a1a1a;}
+  .post_cqb_faq_item[open] .post_cqb_faq_question{background:#1d3323;}
+}
+@media (prefers-reduced-motion: reduce){*{transition:none!important;animation:none!important;}}
+@media (max-width:768px){.post_cqb_codeblock,.post_cqb_terminal{font-size:0.85em;padding:14px;}}
+</style>
+
+<div class="post_cqb_body">
+
+<p style="text-align:center"><span class="post_cqb_badge"><i class="fas fa-clock" style="margin-right:6px"></i>Leitura: ~7 min</span></p>
+
+<div class="post_cqb_tldr">
+<p style="font-weight:bold;color:#333;margin-bottom:8px"><i class="fas fa-bolt" style="color:#28a745;margin-right:6px"></i>TL;DR:</p>
+<ul style="margin:0;padding-left:20px">
+  <li><i class="fas fa-shield-halved" style="color:#28a745;margin-right:6px"></i>Auditamos o repositório Bitcoin do @CanalQb: 3 ferramentas em binário, 2 falhas de segurança corrigidas e 1 bug real de decodificação eliminado.</li>
+  <li><i class="fas fa-rocket" style="color:#28a745;margin-right:6px"></i>Reimplementamos tudo em Python puro (stdlib, zero dependências), com endomorfismo GLV que testa 3 chaves por operação — até 3x mais eficiente.</li>
+  <li><i class="fas fa-graduation-cap" style="color:#28a745;margin-right:6px"></i>Tutorial completo no TUTORIAL.md e snapshot de saldos via API pública, sem baixar a blockchain inteira.</li>
+</ul>
+</div>
+
+<div style="margin-bottom:30px;text-align:center">
+  <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy" height="450" width="100%" src="https://www.youtube.com/embed/DUDla8Bya8M?autoplay=1&mute=1&origin=https://canalqb.com.br/&controls=1&rel=0&enablejsapi=1&cc_load_policy=1" title="Vídeo do @CanalQb — Ferramentas Bitcoin Puzzle" aria-label="Vídeo tutorial @CanalQb" style="border:none;border-radius:10px;max-width:100%"></iframe>
+</div>
+
+<div class="post_cqb_warn">
+  <i class="fas fa-triangle-exclamation" style="color:#ffc107"></i> <strong>Aviso Técnico:</strong> Scripts e ferramentas fornecidos têm fins exclusivamente educacionais e de pesquisa. Use apenas sobre endereços cuja investigação você tem direito (puzzles públicos, testes próprios). O @CanalQb não se responsabiliza por danos ou perdas decorrentes do uso indevido.
+</div>
+
+<h2 class="post_cqb_h2">Ferramentas de busca em Python podem ser auditadas, corrigidas e 3x mais rápidas</h2>
+<p>A maioria das ferramentas de busca para o Bitcoin Puzzle circula como binário fechado — e ninguém sabe o que roda dentro delas. Nesta análise, abrimos o repositório, encontramos falhas reais de segurança e reescrevemos tudo em Python puro, sem nenhuma dependência externa.</p>
+
+<p>O <a href="https://github.com/canalqb/Bitcoin" target="_blank" rel="noopener noreferrer">repositório Bitcoin do @CanalQb</a> reúne três ferramentas: uma busca pseudoaleatória de chaves privadas, uma busca baseada em endomorfismo da secp256k1 e um snapshot da blockchain para análise. O problema imediato: tudo era distribuído como executável compilado, sem código-fonte. Para um projeto que lida com criptografia de curva elíptica, isso é o mesmo que entregar um cofre sem mostrar a fechadura.</p>
+
+<p>Então o desafio ficou claro: auditar o que existe, corrigir o que estava errado, e devolver para a comunidade uma versão aberta, segura e eficiente. Foi exatamente o que fizemos — e o resultado está neste post, com comandos reais, logs reais e números de desempenho medidos na prática.</p>
+
+<h2 class="post_cqb_h2">O que o Bitcoin Puzzle faz e por que ele é um laboratório perfeito</h2>
+<p>O "Bitcoin Puzzle Transaction" é um desafio público que travou BTC em 160 endereços cujas chaves privadas estão em intervalos conhecidos: o puzzle N usa o intervalo de 2^(N-1) até 2^N - 1. Não há nenhuma vulnerabilidade na criptografia — é um teste de paciência, eficiência e sorte.</p>
+
+<p>Os puzzles 1 a 50 já foram resolvidos publicamente; o puzzle 66, por exemplo, caiu em janeiro de 2024 e seus 6,6 BTC foram sacados. Os puzzles 67 em diante continuam de pé, com valores crescentes. Para um estudante de criptografia, esse cenário é ideal: você pode validar uma implementação completa (curva elíptica, hashing, encoding, endereços) contra dados reais e conhecidos, sem precisar de infraestrutura de verdade.</p>
+
+<p>Aqui no @CanalQb, validamos cada função da nova implementação contra os endereços reais dos puzzles 1 a 19, cujas chaves privadas são públicas. Se a sua ferramenta deriva o endereço correto para a chave 224 do puzzle 8, a sua matemática está certa — e isso é verificável em segundos.</p>
+
+<h2 class="post_cqb_h2">Quais falhas de segurança foram encontradas na versão original</h2>
+<p>Encontramos 2 falhas de segurança de nível alto e 1 de nível crítico na cadeia original. Nenhuma delas era um bug de matemática — eram decisões de arquitetura.</p>
+
+<p><strong>Falha 1 — semente previsível (HIGH):</strong> a busca pseudoaleatória original usava o endereço MAC da placa de rede como semente do gerador de números aleatórios. O MAC é um identificador público, visível em qualquer rede local, e previsível. Pior: duas execuções na mesma máquina produzem a mesma sequência, desperdiçando trabalho. A correção foi usar o CSPRNG do sistema operacional via <code>secrets.randbelow()</code> — entropia real, sem exposição de identidade do dispositivo.</p>
+
+<p><strong>Falha 2 — banco de dados remoto (HIGH):</strong> as ferramentas originais dependiam de um PostgreSQL remoto com credenciais para obter intervalos e endereços-alvo. Isso significa credenciais em arquivo de configuração, exposição de dados de uso e um ponto único de falha. A correção foi eliminar completamente o banco remoto: os dados dos 160 puzzles agora vivem em um arquivo JSON local versionado (<code>data/puzzles.json</code>), e o snapshot usa SQLite local.</p>
+
+<p><strong>Falha 3 — token exposto (CRITICAL):</strong> durante o processo de sincronização, um token de acesso do GitHub foi utilizado na URL do repositório remoto e ficou gravado no config local do clone. Isso foi classificado como exposição de credencial, a URL foi sanitizada após o push e a recomendação é rotacionar o token. Nunca coloque tokens em URLs, código ou documentação — use variáveis de ambiente ou o GitHub CLI autenticado.</p>
+
+<p>Além das falhas, encontramos e corrigimos um <strong>bug real de implementação</strong>: a função de validação de endereços-alvo usava a decodificação Base58 crua (25 bytes, incluindo checksum) em vez da Base58Check (21 bytes de payload). Resultado: qualquer endereço-alvo era rejeitado. O teste automatizado cobre essa regressão para sempre.</p>
+
+<h2 class="post_cqb_h2">Como a reescrita em Python reduz o consumo de hardware</h2>
+<p>O objetivo não era só tornar o programa mais rápido — era obter o melhor equilíbrio entre CPU, RAM, disco e energia. A versão em Python puro ataca isso em cinco frentes.</p>
+
+<p><strong>Zero dependências:</strong> nada de pip install, nada de ambiente virtual, nada de bibliotecas compiladas. A implementação usa apenas a biblioteca padrão: <code>hashlib</code> para SHA-256/RIPEMD-160, <code>secrets</code> para entropia, <code>sqlite3</code> para o banco local. Menos dependências significa menos memória, menos disco e menos superfície de ataque na cadeia de suprimentos.</p>
+
+<p><strong>Endomorfismo GLV:</strong> a secp256k1 tem uma propriedade algébrica especial: as constantes <code>beta</code> e <code>lambda</code> permitem transformar um ponto da curva em outros dois relacionados, que correspondem a chaves multiplicadas por <code>lambda</code> e <code>lambda²</code>. Com isso, uma única multiplicação escalar gera 3 chaves candidatas. É um ganho de até 3x sem gastar energia extra — a matemática faz o trabalho.</p>
+
+<p><strong>Comparação por hash:</strong> em vez de converter cada chave candidata para o endereço Base58 completo (caro), a busca compara o hash160 do ponto diretamente contra um conjunto pré-computado de alvos. A codificação Base58 só acontece quando há uma correspondência — economia de CPU em todos os casos sem sucesso.</p>
+
+<p><strong>Arquitetura Jacobiana:</strong> a multiplicação escalar usa coordenadas Jacobianas, que eliminam as inversões modulares dentro do laço principal — apenas uma inversão no final. Isso reduz drasticamente o custo por multiplicação em comparação com a implementação ingênua em coordenadas afim.</p>
+
+<p><strong>Paralelismo sob demanda:</strong> o padrão é 1 processo (menor consumo de energia e temperatura). Se o usuário quiser, <code>--workers N</code> escala para quantos núcleos estiverem disponíveis — mas nunca mais do que o necessário.</p>
+
+<p>O resultado medido no nosso hardware: ~7.900 chaves/s no modo endomorfismo com um único processo Python puro. Não é um recorde — implementações em C chegam a milhões —, mas é honesto, auditável e custa literalmente zero de configuração.</p>
+
+<h2 class="post_cqb_h2">Passo a passo: instalar e rodar em menos de 1 minuto</h2>
+<p>O processo completo tem 5 etapas e nenhuma depende de instalação de pacotes. Abaixo, cada passo com o comando exato, o que ele faz, por que é necessário, o resultado esperado e o erro mais comum.</p>
+
+<h3 class="post_cqb_h3">Passo 1 — clonar o repositório</h3>
+<div class="post_cqb_codeblock">git clone https://github.com/canalqb/Bitcoin.git<br>cd Bitcoin</div>
+<p>Esse passo baixa o projeto para a sua máquina e entra na pasta. É necessário porque todos os comandos seguintes assumem que você está dentro do diretório <code>Bitcoin</code>. Quando funcionar, você verá a mensagem <code>Cloning into 'Bitcoin'...</code> e o prompt voltará.</p>
+<p><i class="fas fa-triangle-exclamation" style="color:#ffc107"></i> Erro comum: se o seu git pedir autenticação, o repositório pode estar privado no seu acesso — confirme com o GitHub CLI (<code>gh auth login</code>) antes de clonar.</p>
+
+<h3 class="post_cqb_h3">Passo 2 — gerar os dados dos puzzles</h3>
+<div class="post_cqb_codeblock">python tools/seed_puzzles.py</div>
+<p>Esse script gera o arquivo <code>data/puzzles.json</code> com os 160 intervalos e endereços oficiais do desafio. Ele é necessário porque a busca precisa saber o intervalo de cada puzzle e qual endereço procurar. Quando funcionar, a saída será: <code>[ok] data\puzzles.json gerado com 160 puzzles</code>.</p>
+<p><i class="fas fa-triangle-exclamation" style="color:#ffc107"></i> Erro comum: se o Python não for reconhecido, instale o Python 3.8+ e marque a opção "Add to PATH" durante a instalação.</p>
+
+<h3 class="post_cqb_h3">Passo 3 — verificar a implementação (recomendado)</h3>
+<div class="post_cqb_codeblock">python tools/selftest.py</div>
+<p>O selftest valida a criptografia contra vetores reais: os endereços dos puzzles 1 a 19, o vetor oficial BIP-173 (bech32), as propriedades do endomorfismo GLV e uma busca de integração nos puzzles 1 e 8. Ele é necessário porque confirma que a sua cópia está gerando endereços corretos antes de você confiar nela. Quando funcionar, a última linha será <code>TODOS OS TESTES PASSARAM</code>.</p>
+<p><i class="fas fa-triangle-exclamation" style="color:#ffc107"></i> Erro comum: se algum teste falhar, o código foi alterado ou o Python é muito antigo — atualize para 3.11+ e rode novamente.</p>
+
+<h3 class="post_cqb_h3">Passo 4 — encontrar a chave de um puzzle já resolvido (demo)</h3>
+<div class="post_cqb_codeblock">python tools/puzzle_search.py --puzzle 8 --mode sequential</div>
+<p>O puzzle 8 tem a chave 224 (hex <code>0xe0</code>), dentro do intervalo 128 a 255. O modo <code>sequential</code> percorre o intervalo em ordem e encontra em segundos. Esse passo é necessário para você entender a saída da ferramenta com um caso garantido, antes de tentar qualquer coisa maior. Quando funcionar, você verá:</p>
+<div class="post_cqb_terminal"><span class="comment">=== CHAVE ENCONTRADA ===</span><br>chave (hex) : 0xe0<br>chave (dec) : 224<br>endereco    : 1M92tSqNmQLYw33fuBvjmeadirh1ysMBxK<br>WIF         : KwDiBf89QgGbjEhKnhXJuH7LrciVrZi3qYjgd9M7rFU...</div>
+
+<h3 class="post_cqb_h3">Passo 5 — buscar um puzzle não resolvido com endomorfismo</h3>
+<div class="post_cqb_codeblock">python tools/puzzle_search.py --puzzle 66 --limit 100000</div>
+<p>O modo padrão é <code>endomorph</code>, que testa 3 chaves por operação. O <code>--limit</code> impede que a busca rode para sempre — 100 mil chaves são suficientes para medir velocidade sem comprometer o hardware. É necessário porque o espaço do puzzle 66 tem 2^65 chaves: sem limite, a busca seria inútil e gastaria energia à toa. Quando funcionar, você verá a barra de progresso no terminal e, ao fim, o resumo de chaves testadas e velocidade.</p>
+<p><i class="fas fa-triangle-exclamation" style="color:#ffc107"></i> Erro comum: "Nao encontrado" em um puzzle resolvido acontece quando você usa o modo <code>random</code> em um intervalo pequeno — o sorteio não garante cobertura. Use <code>sequential</code> para intervalos pequenos.</p>
+
+<h2 class="post_cqb_h2">Snapshot de saldos sem baixar a blockchain inteira</h2>
+<p>A ferramenta Snapshot original baixava o estado completo da blockchain para um banco local — algo que consome dezenas de gigabytes de disco e horas de processamento. A nova versão resolve o mesmo problema com uma fração do hardware: consulta a API pública e confiável da blockstream.info, respeitando limite de requisições, e armazena tudo em SQLite local.</p>
+
+<div class="post_cqb_codeblock">python tools/snapshot_btc.py --all-puzzles</div>
+
+<p>O comando acima consulta o saldo dos 160 endereços do puzzle, usa cache em SQLite (segundas execuções são instantâneas), e mostra o saldo total e o top 10. Para exportar em TSV para análise externa:</p>
+
+<div class="post_cqb_codeblock">python tools/snapshot_btc.py --all-puzzles --export-tsv snapshot.tsv</div>
+
+<p>Na prática, isso significa que monitorar se um puzzle foi resolvido (saldo zerado) vira um comando de 10 segundos, não uma operação de horas com um nó completo rodando.</p>
+
+<h2 class="post_cqb_h2">Quais novos recursos foram adicionados além das correções</h2>
+<p>Além de corrigir o que existia, a versão 2.0 adiciona recursos que não existiam na versão original em binário.</p>
+
+<ul class="post_cqb_checklist">
+  <li><i class="fas fa-square-check" style="color:#28a745"></i> <strong>3 modos de busca:</strong> <code>sequential</code> (determinístico e resumível), <code>random</code> (CSPRNG) e <code>endomorph</code> (3x via GLV).</li>
+  <li><i class="fas fa-square-check" style="color:#28a745"></i> <strong>Resume automático:</strong> o progresso é salvo atomicamente em JSON; um Ctrl+C não perde o trabalho, e o modo sequential retoma exatamente de onde parou.</li>
+  <li><i class="fas fa-square-check" style="color:#28a745"></i> <strong>Benchmark local:</strong> <code>--benchmark --limit N</code> mede a velocidade da sua máquina sem tocar a rede.</li>
+  <li><i class="fas fa-square-check" style="color:#28a745"></i> <strong>Selftest com 17 verificações:</strong> baseado em vetores reais e propriedades algébricas da curva.</li>
+  <li><i class="fas fa-square-check" style="color:#28a745"></i> <strong>Multiprocessamento opcional:</strong> <code>--workers N</code> para quem quiser usar mais núcleos; default de 1 processo.</li>
+  <li><i class="fas fa-square-check" style="color:#28a745"></i> <strong>Endereço P2WPKH (bech32):</strong> além do P2PKH usado nos puzzles, a biblioteca gera endereços segwit válidos.</li>
+</ul>
+
+<h2 class="post_cqb_h2">Como validar se o seu hardware está sendo usado de forma eficiente</h2>
+<p>Três sinais indicam que a ferramenta está consumindo o mínimo necessário: a velocidade se mantém estável (sem picos de pausa que indicariam garbage collection excessivo ou contenção de I/O), a temperatura não sobe com o modo padrão de 1 processo, e o arquivo de resume é atualizado a cada 10 segundos sem travar a busca. Para medir na sua máquina:</p>
+
+<div class="post_cqb_codeblock">python tools/puzzle_search.py --benchmark --limit 10000</div>
+
+<p>O benchmark reporta chaves/s e tempo total. Se você quiser mais velocidade, <code>--workers</code> escala linearmente até o número de núcleos físicos — mas lembre-se: mais processos = mais energia. O equilíbrio certo depende do seu objetivo.</p>
+
+<h2 class="post_cqb_h2">Perguntas frequentes sobre as ferramentas Bitcoin Puzzle</h2>
+
+<div class="post_cqb_faq">
+  <details class="post_cqb_faq_item">
+    <summary class="post_cqb_faq_question"><i class="fas fa-question-circle"></i> É seguro rodar esta ferramenta na minha máquina?</summary>
+    <div class="post_cqb_faq_answer">Sim, com ressalvas. O código é 100% aberto e usa apenas a biblioteca padrão do Python, sem dependências de terceiros — o que elimina o risco de cadeia de suprimentos. Nenhuma credencial é necessária e nenhum dado é enviado para a rede (exceto o snapshot, que consulta a API pública blockstream.info por HTTPS). O único dado sensível gerado é a chave privada quando a busca encontra uma correspondência — e ela fica apenas no seu terminal, com salvamento opcional em arquivo local ignorado pelo git. Como qualquer ferramenta de criptografia, rode primeiro o <code>selftest.py</code> para confirmar que a sua cópia está íntegra.</div>
+  </details>
+  <details class="post_cqb_faq_item">
+    <summary class="post_cqb_faq_question"><i class="fas fa-question-circle"></i> Por que o endomorfismo testa 3 chaves por operação?</summary>
+    <div class="post_cqb_faq_answer">A curva secp256k1 tem uma propriedade chamada endomorfismo GLV. Existem duas constantes especiais, <code>beta</code> (no corpo do campo) e <code>lambda</code> (no corpo da ordem), tais que, se você multiplicar a coordenada x de um ponto por <code>beta</code>, o resultado é um ponto válido da curva que corresponde à chave multiplicada por <code>lambda</code>. Aplicando duas vezes, você obtém um terceiro ponto, correspondente a <code>lambda²</code>. Como <code>beta³ ≡ 1</code> e <code>lambda³ ≡ 1</code>, o ciclo se fecha. Então, para cada chave k sorteada, a ferramenta testa k, k·lambda e k·lambda² — três endereços com o custo de uma única multiplicação escalar. O selftest valida essas identidades algebricamente (<code>mul(lambda) == phi(G)</code>), garantindo que a aceleração não quebrou a matemática.</div>
+  </details>
+  <details class="post_cqb_faq_item">
+    <summary class="post_cqb_faq_question"><i class="fas fa-question-circle"></i> Por que usar MAC address como semente era um problema de segurança?</summary>
+    <div class="post_cqb_faq_answer">O endereço MAC é um identificador fixo, público e previsível da placa de rede. Usá-lo como semente de um gerador pseudoaleatório tem três consequências graves: primeiro, qualquer observador em uma rede local pode ver o MAC e reproduzir a sequência de chaves geradas, eliminando o fator "aleatório" da busca; segundo, o MAC vaza identidade do dispositivo — uma pegada digital desnecessária; terceiro, a mesma máquina sempre gera a mesma sequência, então reiniciar a busca repete trabalho em vez de explorar o espaço. A substituição pelo <code>secrets</code> do Python usa o CSPRNG do sistema operacional (no Windows, o CryptGenRandom; no Linux, /dev/urandom), que tem entropia real e não expõe nenhum identificador.</div>
+  </details>
+  <details class="post_cqb_faq_item">
+    <summary class="post_cqb_faq_question"><i class="fas fa-question-circle"></i> A busca em Python consegue resolver um puzzle de 66 bits?</summary>
+    <div class="post_cqb_faq_answer">Estatisticamente, não em tempo útil — e é importante ser honesto sobre isso. O espaço do puzzle 66 tem aproximadamente 2^65 chaves. A nossa implementação mede cerca de 7.900 chaves/s por processo, ou seja, cerca de 6,8x10^8 chaves/dia. Para percorrer 2^65 chaves, seriam necessários algo em torno de 1,7x10^10 dias de um único processo. Implementações em C com otimização extrema e uso de GPU chegam a bilhões de chaves/s, e mesmo assim o puzzle 66 levou anos para cair. O valor desta ferramenta é didático: ela demonstra o algoritmo completo, é verificável contra puzzles resolvidos e serve de base de estudo — não é uma máquina de mineração. O modo <code>sequential</code> resolve os puzzles 1 a 50 em segundos, o que é um ótimo banco de testes.</div>
+  </details>
+  <details class="post_cqb_faq_item">
+    <summary class="post_cqb_faq_question"><i class="fas fa-question-circle"></i> O que mudou em relação à versão original em binário?</summary>
+    <div class="post_cqb_faq_answer">Tudo o que era fechado virou aberto e auditável. A versão original distribuía três executáveis Windows/Linux sem código-fonte, dependia de um PostgreSQL remoto e usava MAC address como semente. A versão 2.0 substitui os três binários por código Python puro (stdlib), com dados locais em JSON/SQLite, CSPRNG, endomorfismo GLV validado, resume automático, benchmark e um selftest de 17 verificações. Os binários originais foram preservados nas pastas de referência para comparação e estudos de engenharia reversa. A compatibilidade não é a mesma — a versão Python exige Python 3.8+ instalado —, mas o custo de instalação é zero dependências.</div>
+  </details>
+  <details class="post_cqb_faq_item">
+    <summary class="post_cqb_faq_question"><i class="fas fa-question-circle"></i> Como faço para contribuir com o projeto?</summary>
+    <div class="post_cqb_faq_answer">O fluxo padrão de código aberto: faça um fork do repositório, crie um branch descritivo, implemente a melhoria, garanta que <code>python tools/selftest.py</code> passe 100%, e abra um Pull Request com uma descrição clara do problema resolvido. Áreas que mais precisam de ajuda: implementações mais rápidas da multiplicação escalar (ex.: wNAF), testes adicionais de vetores, e melhorias no snapshot (novas fontes de dados com fallback). Antes de qualquer mudança criptográfica, leia o SECURITY.md — alterar a matemática para "ganhar desempenho" é exatamente o tipo de mudança que pode introduzir um bug sutil na geração de endereços.</div>
+  </details>
+</div>
+
+<p style="text-align:center"><a href="https://www.canalqb.com.br/search?q=bitcoin" target="_blank" rel="noopener noreferrer">Mais conteúdos sobre Bitcoin no canalqb.com.br</a> · <a href="https://www.canalqb.com.br/search?q=puzzle" target="_blank" rel="noopener noreferrer">Tutoriais de puzzle</a> · <a href="https://www.canalqb.com.br/search?q=criptografia" target="_blank" rel="noopener noreferrer">Criptografia na prática</a></p>
+
+<h2 class="post_cqb_h2">Referências e fontes</h2>
+<ul style="color:#555;line-height:1.8">
+  <li><i class="fas fa-book" style="color:#28a745;margin-right:6px"></i>Bitcoin Puzzle Transaction — fórum original: <a href="https://bitcointalk.org/index.php?topic=1306983.0" target="_blank" rel="noopener noreferrer">bitcointalk.org</a></li>
+  <li><i class="fas fa-book" style="color:#28a745;margin-right:6px"></i>Tabela pública de endereços dos puzzles: <a href="https://github.com/Daniel-Wu-1/bitcoin-puzzle-gpu" target="_blank" rel="noopener noreferrer">github.com/Daniel-Wu-1/bitcoin-puzzle-gpu</a></li>
+  <li><i class="fas fa-book" style="color:#28a745;margin-right:6px"></i>API pública de saldos: <a href="https://blockstream.info" target="_blank" rel="noopener noreferrer">blockstream.info</a></li>
+  <li><i class="fas fa-book" style="color:#28a745;margin-right:6px"></i>BIP-173 (bech32): <a href="https://github.com/bitcoin/bips/blob/master/bip-0173.mediawiki" target="_blank" rel="noopener noreferrer">bips.github.io</a></li>
+  <li><i class="fas fa-book" style="color:#28a745;margin-right:6px"></i>Documentação oficial do Python: <a href="https://docs.python.org/3/library/secrets.html" target="_blank" rel="noopener noreferrer">docs.python.org</a></li>
+</ul>
+
+<p style="font-size:0.85em;color:#777;margin:20px 0">
+  <i class="fas fa-globe"></i> <strong>Nota Jurídica:</strong> Este conteúdo pode estar sujeito a diferentes leis de privacidade dependendo da sua jurisdição. Consulte o <a href="https://iapp.org/resources/article/the-iapp-resource-center/" target="_blank" rel="noopener noreferrer">IAPP Global Privacy Directory</a> para informações específicas da sua região.
+</p>
+
+<div class="post_cqb_footer">
+  <p style="margin:0;color:#555"><i class="fas fa-heart" style="color:#d32f2f"></i> Apoie o trabalho: <a href="https://youtube.com/@canalqb" target="_blank" rel="noopener noreferrer">@CanalQb no YouTube</a></p>
+  <p style="margin:8px 0 0;font-size:0.85em;color:#777">Feito com Master Rules Claude v9.0</p>
+</div>
+
+</div>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Ferramentas Bitcoin Puzzle: análise, correções e tutorial",
+  "description": "Auditoria completa das ferramentas Bitcoin Puzzle do @CanalQb: falhas de segurança corrigidas, reescrita em Python puro com endomorfismo GLV e tutorial passo a passo.",
+  "author": {"@type": "Person", "name": "@CanalQb", "url": "https://canalqb.com.br"},
+  "publisher": {
+    "@type": "Organization", "name": "@CanalQb", "url": "https://canalqb.com.br",
+    "logo": {"@type": "ImageObject", "url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgAppgdjbwBxn27tGUch6DJBXRrlOAwk1V0ZTtHvEvlt0HoVsARJSfJDizdDRlmkLwKSxSRzbknK5L3jVKs364oRzgozNeD0Vv2aky1vk2QzrJh-O_sgDQEUXJxw5XHtmFNsmI5iv_ITOJcDfW7k6XtoTE9RgJiKZDW6ZTK41oAjDh7smDJMTC9E1h4YOfm/s2560/CanalQb.png"}
+  },
+  "datePublished": "2025-08-28",
+  "dateModified": "2025-08-28",
+  "mainEntityOfPage": "https://www.canalqb.com.br/2025/08/ferramentas-bitcoin-puzzle.html",
+  "copyrightHolder": {"@type": "Person", "name": "@CanalQb"},
+  "license": "https://creativecommons.org/licenses/by-nc-nd/4.0/",
+  "inLanguage": "pt-BR",
+  "keywords": "bitcoin, puzzle, secp256k1, endomorfismo, criptografia, python, busca de chaves"
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "É seguro rodar esta ferramenta na minha máquina?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Sim, com ressalvas. O código é 100% aberto e usa apenas a biblioteca padrão do Python, sem dependências de terceiros, o que elimina o risco de cadeia de suprimentos. Nenhuma credencial é necessária e nenhum dado é enviado para a rede, exceto o snapshot que consulta a API pública blockstream.info por HTTPS. O único dado sensível gerado é a chave privada quando a busca encontra uma correspondência, e ela fica apenas no seu terminal. Rode primeiro o selftest.py para confirmar que a sua cópia está íntegra."}
+    },
+    {
+      "@type": "Question",
+      "name": "Por que o endomorfismo testa 3 chaves por operação?",
+      "acceptedAnswer": {"@type": "Answer", "text": "A curva secp256k1 tem o endomorfismo GLV: multiplicar a coordenada x de um ponto por beta produz outro ponto válido que corresponde à chave multiplicada por lambda. Como beta³ ≡ 1 e lambda³ ≡ 1, o ciclo se fecha em três pontos. Para cada chave k sorteada, a ferramenta testa k, k·lambda e k·lambda² com o custo de uma única multiplicação escalar. O selftest valida essas identidades algebricamente."}
+    },
+    {
+      "@type": "Question",
+      "name": "Por que usar MAC address como semente era um problema de segurança?",
+      "acceptedAnswer": {"@type": "Answer", "text": "O MAC é um identificador fixo, público e previsível. Como semente, permite que qualquer observador em rede local reproduza a sequência de chaves, vaza identidade do dispositivo e faz a mesma máquina sempre gerar a mesma sequência, repetindo trabalho. A substituição usa o CSPRNG do sistema operacional via secrets do Python, com entropia real."}
+    },
+    {
+      "@type": "Question",
+      "name": "A busca em Python consegue resolver um puzzle de 66 bits?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Estatisticamente não em tempo útil. O espaço do puzzle 66 tem cerca de 2^65 chaves e a implementação mede ~7.900 chaves/s, o que levaria bilhões de anos. O valor é didático: o algoritmo é completo e verificável contra os puzzles 1 a 50, resolvidos em segundos no modo sequential."}
+    },
+    {
+      "@type": "Question",
+      "name": "O que mudou em relação à versão original em binário?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Tudo o que era fechado virou aberto: a versão 2.0 substitui os binários por código Python puro com dados locais, CSPRNG, endomorfismo GLV validado, resume automático, benchmark e selftest. Os binários originais foram preservados como referência."}
+    },
+    {
+      "@type": "Question",
+      "name": "Como faço para contribuir com o projeto?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Faça um fork, crie um branch, implemente a melhoria, garanta que o selftest passe 100% e abra um Pull Request. Antes de qualquer mudança criptográfica, leia o SECURITY.md — alterar a matemática por desempenho pode introduzir bugs sutis na geração de endereços."}
+    }
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Início", "item": "https://www.canalqb.com.br/"},
+    {"@type": "ListItem", "position": 2, "name": "Bitcoin", "item": "https://www.canalqb.com.br/search?q=bitcoin"},
+    {"@type": "ListItem", "position": 3, "name": "Ferramentas Bitcoin Puzzle", "item": "https://www.canalqb.com.br/2025/08/ferramentas-bitcoin-puzzle.html"}
+  ]
+}
+</script>
+
+<script>
+(function() {
+  'use strict';
+  document.querySelectorAll('.post_cqb_codeblock').forEach(function(block) {
+    var btn = document.createElement('button');
+    btn.innerHTML = '<i class="fas fa-copy" style="margin-right:6px"></i>Copiar';
+    btn.className = 'post_cqb_copy_btn';
+    btn.setAttribute('aria-label', 'Copiar bloco de código');
+    btn.addEventListener('click', function() {
+      var text = block.innerText.replace('Copiar', '').trim();
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(function() {
+          btn.innerHTML = '<i class="fas fa-check" style="margin-right:6px"></i>Copiado';
+          setTimeout(function() {
+            btn.innerHTML = '<i class="fas fa-copy" style="margin-right:6px"></i>Copiar';
+          }, 2000);
+        });
+      }
+    });
+    block.parentNode.insertBefore(btn, block.nextSibling);
+  });
+
+  var bar = document.createElement('div');
+  bar.className = 'post_cqb_progress';
+  document.body.appendChild(bar);
+  var ticking = false;
+  window.addEventListener('scroll', function() {
+    if (!ticking) {
+      window.requestAnimationFrame(function() {
+        var h = document.documentElement;
+        var pct = (h.scrollTop / (h.scrollHeight - h.clientHeight)) * 100;
+        bar.style.width = pct + '%';
+        ticking = false;
+      });
+      ticking = true;
+    }
+  }, {passive: true});
+})();
+</script>
