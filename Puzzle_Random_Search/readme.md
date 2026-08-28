@@ -1,5 +1,21 @@
 ---
 
+> **ATUALIZADO (v2.0)** — Este binario original foi substituido por uma
+> implementacao aberta em Python: `tools/puzzle_search.py` (veja o
+> `README.md` na raiz e o `TUTORIAL.md`).
+>
+> ⚠️ **Falha de seguranca corrigida**: a versao original usava o endereco
+> MAC da placa de rede como semente do gerador de numeros aleatorios —
+> previsivel, publico e identico entre execucoes da mesma maquina. A v2.0
+> usa o CSPRNG do sistema operacional (`secrets`).
+>
+> ⚠️ **Binario fechado**: sem codigo-fonte, nao e possivel auditar o que
+> o executavel envia pela rede. Prefira a versao Python.
+>
+> O binario abaixo foi preservado intacto apenas como referencia historica.
+
+---
+
 # 🔐 Bitcoin Private Key Finder
 
 Este é um **programa autônomo** que realiza uma busca pseudoaleatória por chaves privadas de Bitcoin, baseando-se em intervalos definidos e tentando encontrar correspondência com endereços previamente configurados.

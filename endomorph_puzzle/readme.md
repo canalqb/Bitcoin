@@ -1,3 +1,19 @@
+> **ATUALIZADO (v2.0)** — Este binario original foi substituido por uma
+> implementacao aberta em Python: `tools/puzzle_search.py --mode endomorph`
+> (veja o `README.md` na raiz e o `TUTORIAL.md`).
+>
+> ⚠️ **Falha de seguranca corrigida**: o binario original dependia de um
+> **PostgreSQL remoto** (confirmado por strings `5432`/`pg_` no executavel)
+> com credenciais. A v2.0 usa dados locais (`data/puzzles.json`) — nada de
+> banco remoto.
+>
+> ⚠️ **Binario fechado**: sem codigo-fonte, nao e possivel auditar o que
+> o executavel envia pela rede. Prefira a versao Python.
+>
+> O binario abaixo foi preservado intacto apenas como referencia historica.
+
+---
+
 # CanalQb - Pesquisa baseada em Endomorfismo - Lambda
 
 ## Descrição

@@ -38,11 +38,11 @@ disco, consumo de RAM e o tempo de instalacao a zero.
 ## Binarios originais (mantidos como referencia)
 
 Os arquivos `.exe` originais (`Puzzle_Random_Search/`,
-`endomorph_puzzle/`, `Snapshot/`) sao executaveis para **Windows x64**
-(PE32+) e **Linux/Ubuntu**. Foram distribuidos sem codigo-fonte no
-repositorio; a linguagem/versao exata de compilacao e `NAO VALIDADO`
-(sem acesso ao codigo-fonte). Esta nova versao Python os substitui com
-codigo aberto.
+`endomorph_puzzle/`, `Snapshot/`) sao executaveis **Windows x64 (PE32+)
+compilados em Swift** (runtime embutido), nome interno "Mini". Foram
+distribuidos sem codigo-fonte no repositorio. Esta versao Python os
+substitui com codigo aberto e auditavel. Veja `ANALYSIS.md` para
+detalhes da inspecao estatica e hashes SHA-256.
 
 ## Sistema operacional / arquitetura
 

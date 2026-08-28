@@ -1,3 +1,18 @@
+> **ATUALIZADO (v2.0)** — Este binario original foi substituido por uma
+> implementacao aberta em Python: `tools/snapshot_btc.py` (veja o
+> `README.md` na raiz e o `TUTORIAL.md`).
+>
+> ⚠️ **Diferenca**: o binario original baixava o estado completo da
+> blockchain (gigabytes em disco). A v2.0 consulta uma API publica com
+> cache em SQLite local — sem GB de disco nem servidor remoto.
+>
+> ⚠️ **Binario fechado**: sem codigo-fonte, nao e possivel auditar o que
+> o executavel faz com os seus dados. Prefira a versao Python.
+>
+> O binario abaixo foi preservado intacto apenas como referencia historica.
+
+---
+
 ## 🧑‍💻 COMO USAR O APLICATIVO SNAPSHOT BTC
 
 O aplicativo **SNAPSHOT BTC**, versão 1.0, permite que você baixe automaticamente os dados mais recentes da blockchain do Bitcoin (endereços e saldos), e os armazene em um banco de dados local para análise.

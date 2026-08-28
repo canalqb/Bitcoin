@@ -1,3 +1,11 @@
+> **NOTA (v2.0)** — O endomorfismo GLV descrito abaixo esta implementado
+> em Python puro em `src/secp256k1.py` (constantes `beta`/`lambda`,
+> propriedades validadas por teste) e e usado pelo modo `endomorph` do
+> `tools/puzzle_search.py` (3 chaves candidatas por multiplicacao escalar).
+> O texto abaixo e a explicacao conceitual original, mantida como referencia.
+
+---
+
 Claro! Vou explicar os dois termos de maneira simples.
 
 ### **Lambda**
