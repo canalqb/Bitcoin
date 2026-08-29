@@ -2,6 +2,18 @@
 
 Todas as alteracoes relevantes deste repositorio.
 
+## [2.0.1] - revisao
+
+### Corrigido (auditoria de codigo)
+- **Bug (crash)**: `candidates_for()` com `k=0` ou multiplo de `N` gerava `ValueError: not enough values to unpack` ao descompactar o ponto no infinito (`pt = ()`). Agora retorna lista vazia (sem candidatos validos) e o modo `endomorph` ignora pontos no infinito com `continue`.
+- **Bug (correcao de resume)**: `_load_resume()` retornava `(data, 0)` mesmo quando `start`/`end` divergiam do solicitado, permitindo que `last_k` de outro intervalo pulasse a busca. Agora retorna `(None, 0)` (resume descartado) quando os parametros divergem.
+- **Bug (validacao de resume)**: resume de um modo (ex.: sequential) podia ser aplicado a outro modo (ex.: random). Adicionado parametro `mode` a `_load_resume()` para validar e descartar resume incompativel.
+- **Validacao de entrada**: `puzzle_search.py` agora rejeita `--workers < 1`, `--workers > 1` combinado com `--mode sequential`, e `--limit < 1` (antes aceitava e falhava depois com erro obscuro ou loop).
+- **Desempenho (I/O)**: `snapshot.py` fazia 1 `commit()` por endereco (160 commits para 160 enderecos). Agora commita em lote a cada 10 inserts, com `commit()` final garantido no `finally`.
+
+### Verificado
+- Selftest: **17/17 PASS** apos as correcoes.
+
 ## [2.0.0] - 2025-08-28
 
 ### Analisado

@@ -12,7 +12,7 @@
 | **Tags** | bitcoin, puzzle, secp256k1, endomorfismo, criptografia, python, busca de chaves, segurança |
 | **Autor** | @CanalQb |
 | **Data de publicação** | 2025-08-28 |
-| **Data de modificação** | 2025-08-28 |
+| **Data de modificação** | 2026-08-28 (revisão v2.0.1: robustez de busca e I/O do snapshot) |
 | **Idioma** | pt-BR |
 | **URL** | https://www.canalqb.com.br/2025/08/ferramentas-bitcoin-puzzle.html |
 | **Canonical** | https://www.canalqb.com.br/2025/08/ferramentas-bitcoin-puzzle.html |
@@ -37,7 +37,7 @@
   "tags": ["bitcoin", "puzzle", "secp256k1", "endomorfismo", "criptografia", "python", "seguranca"],
   "author": "@CanalQb",
   "publishDate": "2025-08-28",
-  "modifiedDate": "2025-08-28",
+  "modifiedDate": "2026-08-28",
   "language": "pt-BR",
   "url": "https://www.canalqb.com.br/2025/08/ferramentas-bitcoin-puzzle.html",
   "canonical": "https://www.canalqb.com.br/2025/08/ferramentas-bitcoin-puzzle.html",

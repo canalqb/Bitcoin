@@ -66,6 +66,7 @@ def snapshot_addresses(addresses, db_path, rate_limit=1.0, refresh=False,
     con = _init_db(db_path)
     now_iso = time.strftime("%Y-%m-%d %H:%M:%S")
     results = []
+    batch = 0
     try:
         for i, addr in enumerate(addresses, 1):
             cached = None
@@ -82,7 +83,10 @@ def snapshot_addresses(addresses, db_path, rate_limit=1.0, refresh=False,
                     "INSERT OR REPLACE INTO balances VALUES (?,?,?)",
                     (addr, balance, now_iso),
                 )
-                con.commit()
+                batch += 1
+                if batch >= 10:  # commit em lote para reduzir I/O
+                    con.commit()
+                    batch = 0
             else:
                 balance = cached
             results.append({"address": addr, "balance": balance,
@@ -100,6 +104,7 @@ def snapshot_addresses(addresses, db_path, rate_limit=1.0, refresh=False,
         if not quiet:
             sys.stderr.write("\n[ctrl+c] interrompido (dados ja salvos sao preservados)\n")
     finally:
+        con.commit()  # garante persistencia do lote pendente
         con.close()
         if not quiet:
             sys.stderr.write("\n")

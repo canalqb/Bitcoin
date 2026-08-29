@@ -87,6 +87,13 @@ def main(argv=None):
     if start > end:
         sys.exit(f"erro: start ({hex(start)}) maior que end ({hex(end)})")
 
+    if args.workers < 1:
+        sys.exit("erro: --workers deve ser >= 1")
+    if args.workers > 1 and args.mode == "sequential":
+        sys.exit("erro: --workers so funciona com modos random/endomorph")
+    if args.limit is not None and args.limit < 1:
+        sys.exit("erro: --limit deve ser >= 1")
+
     resume_path = None if args.no_resume else args.resume
 
     if args.benchmark:

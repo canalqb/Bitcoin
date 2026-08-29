@@ -49,21 +49,29 @@ def hash160_targets(addresses):
 
 
 def candidates_for(k, mode):
-    """Gera os pares (escalar, hash160) para uma chave k conforme o modo."""
+    """Gera os pares (escalar, hash160) para uma chave k conforme o modo.
+
+    Se k for 0 ou multiplo de N (ponto no infinito), retorna lista vazia
+    porque nao ha chave publica valida para candidatura.
+    """
+    pt = secp256k1.mul(k)
+    if not pt:
+        return []  # k invalido (ponto no infinito)
     if mode == "endomorph":
-        q = secp256k1.mul(k)
         out = []
-        for scalar, pt in zip(
+        for scalar, pt2 in zip(
             (k, (k * secp256k1.LAMBDA) % secp256k1.N,
              (k * secp256k1.LAMBDA2) % secp256k1.N),
-            secp256k1.endomorphism(q),
+            secp256k1.endomorphism(pt),
         ):
-            x, y = pt
+            if not pt2:
+                continue
+            x, y = pt2
             pk = (b"\x02" if (y & 1) == 0 else b"\x03") + x.to_bytes(32, "big")
             out.append((scalar, btcaddr.hash160(pk)))
         return out
     # random / sequential: 1 candidato por multiplicacao
-    x, y = secp256k1.mul(k)
+    x, y = pt
     pk = (b"\x02" if (y & 1) == 0 else b"\x03") + x.to_bytes(32, "big")
     return [(k, btcaddr.hash160(pk))]
 
@@ -94,8 +102,13 @@ class SearchConfig:
         self.interval = interval
 
 
-def _load_resume(path, start, end):
-    """Carrega arquivo de resume; valida parametros para nao retomar errado."""
+def _load_resume(path, start, end, mode=None):
+    """Carrega arquivo de resume; valida parametros para nao retomar errado.
+
+    Retorna (data, attempts_offset). Se o resume nao existir, estiver
+    invalido, ou tiver start/end/mode diferentes do solicitado, retorna
+    (None, 0) para nao retomar uma busca com parametros divergentes.
+    """
     if not path or not os.path.exists(path):
         return None, 0
     try:
@@ -104,7 +117,9 @@ def _load_resume(path, start, end):
     except (OSError, ValueError):
         return None, 0
     if (data.get("start") != start or data.get("end") != end):
-        return data, 0
+        return None, 0
+    if mode is not None and data.get("mode") != mode:
+        return None, 0
     return data, data.get("attempts", 0)
 
 
@@ -126,7 +141,7 @@ def run_search(cfg):
         raise ValueError(f"modo invalido: {cfg.mode}")
 
     span = cfg.end - cfg.start + 1
-    resume_data, attempts_offset = _load_resume(cfg.resume_path, cfg.start, cfg.end)
+    resume_data, attempts_offset = _load_resume(cfg.resume_path, cfg.start, cfg.end, cfg.mode)
     keys = attempts_offset
     last_save = time.time()
 
